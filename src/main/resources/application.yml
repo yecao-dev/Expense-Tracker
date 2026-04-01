@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/expense_tracker}
+    username: ${SPRING_DATASOURCE_USERNAME:expense_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:your_secure_password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+server:
+  port: 8080
+
+plaid:
+  client-id: ${PLAID_CLIENT_ID:your_client_id_here}
+  secret: ${PLAID_SECRET:your_secret_here}
+  env: ${PLAID_ENV:sandbox}
+
+anthropic:
+  api-key: ${ANTHROPIC_API_KEY:your_api_key_here}
+  model: ${ANTHROPIC_MODEL:claude-sonnet-4-20250514}
+
+jwt:
+  secret: ${JWT_SECRET:change-me-in-production}
+  expiration: ${JWT_EXPIRATION:86400000}
